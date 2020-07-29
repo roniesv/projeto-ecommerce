@@ -52,116 +52,22 @@
     <section class="painel novidades">
       <h2>Novidades</h2>
       <ol>
-        
-        <li>
-          <a href="produto.php">
-              <figure>
-                <img src="img/produtos/miniatura1.png" alt="miniatura1">
-                <figcaption>xxxxx R$ 0,00</figcaption>
-              </figure>
-          </a>
-        </li>
+        <?php
+            $conexao = mysqli_connect("127.0.0.1", "root", "", "mirror_fashion");
+            $dados = mysqli_query($conexao, "select * from produtos");
+            while ($produto=mysqli_fetch_array($dados)):
 
+        ?>    
         <li>
-          <a href="produto.html">
-              <figure>
-                <img src="img/produtos/miniatura2.png" alt="miniatura2">
-                <figcaption>xxxxx R$ 129,90</figcaption>
-              </figure>
+            <a href="produto.php?id=<?=$produto['id']?>">
+            <figure>
+                <img src="img/produtos/miniatura<?=$produto['id']?>.png" 
+                alt="<?=$produto['nome']?>">
+               <figcaption><?=$produto['nome']?>por <?=$produto['preco']?> </figcaption>  
+            </figure> 
         </li>
         
-        <li>
-    
-          <a href="produto.html">
-              <figure>
-                <img src="img/produtos/miniatura3.png" alt="miniatura2">
-                <figcaption>xxxxx R$ 129,90</figcaption>
-              </figure>
-          </a>              
-        </li>
-
-        <li>
-          <a href="produto.html">
-              <figure>
-                <img src="img/produtos/miniatura4.png" alt="miniatura1">
-                <figcaption>xxxxx R$ 0,00</figcaption>
-              </figure>
-          </a>
-        </li>
-
-        <li>
-          <a href="produto.html">
-              <figure>
-                <img src="img/produtos/miniatura5.png" alt="miniatura2">
-                <figcaption>xxxxx R$ 129,90</figcaption>
-              </figure>
-              </a>
-        </li>
-
-        <li>
-          <a href="produto.html">
-              <figure>
-                <img src="img/produtos/miniatura6.png" alt="miniatura2">
-                <figcaption>xxxxx R$ 129,90</figcaption>
-              </figure>
-              </a>              
-        </li>
-
-        <li>
-          <a href="produto.html">
-              <figure>
-                <img src="img/produtos/miniatura7.png" alt="miniatura1">
-                <figcaption>xxxxx R$ 0,00</figcaption>
-              </figure>
-          </a>
-        </li>
-
-        <li>
-          <a href="produto.html">
-              <figure>
-                <img src="img/produtos/miniatura8.png" alt="miniatura2">
-                <figcaption>xxxxx R$ 129,90</figcaption>
-              </figure>
-        </li>
-        
-        <li>
-    
-          <a href="produto.html">
-              <figure>
-                <img src="img/produtos/miniatura9.png" alt="miniatura2">
-                <figcaption>xxxxx R$ 129,90</figcaption>
-              </figure>
-          </a>              
-        </li>
-        
-        <li>
-          <a href="produto.html">
-              <figure>
-                <img src="img/produtos/miniatura10.png" alt="miniatura1">
-                <figcaption>xxxxx R$ 0,00</figcaption>
-              </figure>
-          </a>
-        </li>
-
-        <li>
-          <a href="produto.html">
-              <figure>
-                <img src="img/produtos/miniatura11.png" alt="miniatura2">
-                <figcaption>xxxxx R$ 129,90</figcaption>
-              </figure>
-              </a>
-        </li>
-        
-        <li>
-          <a href="produto.html">
-              <figure>
-                <img src="img/produtos/miniatura12.png" alt="miniatura2">
-                <figcaption>xxxxx R$ 129,90</figcaption>
-              </figure>
-              </a>              
-        </li>
-
-        
+        <?php endwhile;?>
         </ol>
         <button type="button">Mostrar mais</button>
 
@@ -169,117 +75,25 @@
         <!--fim .painel .novidades-->
 
         <!-- come�o painel mais-vendidos-->
-        <section class="painel mais-vendidos">
-          <h2>Mais Vendidos</h2>
+        
+      <section class="painel mais-vendidos">
+        <h2>Mais Vendidos</h2>
           <ol>
-
-            <li>
-              <a href="produto.html">
-                  <figure>
-                    <img src="img/produtos/miniatura1.png" alt="miniatura1">
-                    <figcaption>xxxxx R$ 0,00</figcaption>
-                  </figure>
-              </a>
-            </li>
-
-            <li>
-              <a href="produto.html">
-                  <figure>
-                    <img src="img/produtos/miniatura2.png" alt="miniatura2">
-                    <figcaption>xxxxx R$ 129,90</figcaption>
-                  </figure>
-            </li>
-
-            <li>
+            <?php
+              $conexao = mysqli_connect("127.0.0.1", "root", "", "mirror_fashion");
+              $dados = mysqli_query($conexao, "select * from produtos");
+              while ($produto=mysqli_fetch_array($dados)):
+             ?>    
+              <li>
+                <a href="produto.php?id=<?=$produto['id']?>">
+                <figure>
+                    <img src="img/produtos/miniatura<?=$produto['id']?>.png" 
+                    alt="<?=$produto['nome']?>">
+                   <figcaption><?=$produto['nome']?>por <?=$produto['preco']?> </figcaption>  
+                </figure> 
+              </li>
         
-              <a href="produto.html">
-                  <figure>
-                    <img src="img/produtos/miniatura3.png" alt="miniatura2">
-                    <figcaption>xxxxx R$ 129,90</figcaption>
-                  </figure>
-              </a>              
-            </li>
-
-            <li>
-              <a href="produto.html">
-                  <figure>
-                    <img src="img/produtos/miniatura4.png" alt="miniatura1">
-                    <figcaption>xxxxx R$ 0,00</figcaption>
-                  </figure>
-              </a>
-            </li>
-
-            <li>
-              <a href="produto.html">
-                  <figure>
-                    <img src="img/produtos/miniatura5.png" alt="miniatura2">
-                    <figcaption>xxxxx R$ 129,90</figcaption>
-                  </figure>
-                  </a>
-            </li>
-
-            <li>
-              <a href="produto.html">
-                  <figure>
-                    <img src="img/produtos/miniatura6.png" alt="miniatura2">
-                    <figcaption>xxxxx R$ 129,90</figcaption>
-                  </figure>
-                  </a>              
-            </li>
-                  
-            <li>
-              <a href="produto.html">
-                  <figure>
-                    <img src="img/produtos/miniatura7.png" alt="miniatura1">
-                    <figcaption>xxxxx R$ 0,00</figcaption>
-                  </figure>
-              </a>
-            </li>
-
-            <li>
-              <a href="produto.html">
-                  <figure>
-                    <img src="img/produtos/miniatura8.png" alt="miniatura2">
-                    <figcaption>xxxxx R$ 129,90</figcaption>
-                  </figure>
-            </li>
-
-            <li>
-        
-              <a href="produto.html">
-                  <figure>
-                    <img src="img/produtos/miniatura9.png" alt="miniatura2">
-                    <figcaption>xxxxx R$ 129,90</figcaption>
-                  </figure>
-              </a>              
-            </li>
-            
-            <li>
-              <a href="produto.html">
-                  <figure>
-                    <img src="img/produtos/miniatura10.png" alt="miniatura1">
-                    <figcaption>xxxxx R$ 0,00</figcaption>
-                  </figure>
-              </a>
-            </li>
-
-            <li>
-              <a href="produto.html">
-                  <figure>
-                    <img src="img/produtos/miniatura11.png" alt="miniatura2">
-                    <figcaption>xxxxx R$ 129,90</figcaption>
-                  </figure>
-                  </a>
-            </li>
-            
-            <li>
-              <a href="produto.html">
-                  <figure>
-                    <img src="img/produtos/miniatura12.png" alt="miniatura2">
-                    <figcaption>xxxxx R$ 129,90</figcaption>
-                  </figure>
-                  </a>              
-            </li>       
+            <?php endwhile;?>      
             
           </ol>
           <button type="button">Mostrar mais</button>
